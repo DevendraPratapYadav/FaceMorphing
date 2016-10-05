@@ -1,5 +1,5 @@
 <html>
-
+<title>Face Morphing</title>
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
@@ -169,7 +169,7 @@ is assumed that both the images M and N are of the same dimensions. </span></p>
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
 
 <p class=MsoNormal><b><span lang=EN-IN style='font-size:20.0pt;line-height:
-107%'>Naïve Algorithm </span></b></p>
+107%'>NaÃ¯ve Algorithm </span></b></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>We
 first describe a simple algorithm for morphing between 2 images. This algorithm
@@ -187,18 +187,18 @@ style='font-size:14.0pt;line-height:107%'>. More formally, </span></p>
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>Where
 I = Intermediate image</span></p>
 
-<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>          
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>Â Â Â Â Â Â Â Â Â Â 
 M = Original image</span></p>
 
-<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>           
-N = Target image           </span></p>
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>Â Â Â Â Â Â Â Â Â Â Â 
+N = Target imageÂ Â Â Â Â Â Â Â Â Â  </span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>This
 algorithm, however, gives terrible results, if the primary features of the two
 images (say eyes, nose or other facial features, when morphing between two
-human portraits) are misaligned. We need to find a one – to – one
+human portraits) are misaligned. We need to find a one â€“ to â€“ one
 correspondence between certain parts of the two images, so as to know which
 part of the original image should be morphed into which part of the target image.
 This is done by the algorithm described next. </span></p>
@@ -222,11 +222,11 @@ This is done by the algorithm described next. </span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>In
 this step, we mark the primary features of both image M and N, establishing a
-one – to – one correspondence between the points marked in M and N. Let us
+one â€“ to â€“ one correspondence between the points marked in M and N. Let us
 consider morphing between two human portraits. In this case we would be marking
 the prominent facial features in both the images, say eyes, eyebrows, nose,
 lips, chin edge etc. We can use multiple points to adequately cover the major
-facial features. Also, since this is a one – to – one correspondence, the
+facial features. Also, since this is a one â€“ to â€“ one correspondence, the
 number of points marked in M will be equal to the number of points marked in N.
 We can manually mark these points in both the images, or use a software tool to
 automatically detect these features and mark the points for us.</span></p>
@@ -245,10 +245,10 @@ lang=EN-IN style='font-size:14.0pt;line-height:107%'>&#945;.</span></p>
 us suppose the two set of points are: </span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>SM
-= {m1, m2, m3, ….., mk} and SN = {n1, n2, n3, ….., nk} </span></p>
+= {m1, m2, m3, â€¦.., mk} and SN = {n1, n2, n3, â€¦.., nk} </span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>We
-obtain another set of point SI = {i1, i2, i3, ….., ik}, where, </span></p>
+obtain another set of point SI = {i1, i2, i3, â€¦.., ik}, where, </span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
 
@@ -265,11 +265,11 @@ features of the images. </span></p>
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>All
 the three sets of points, namely SM, SI, SN, are stored in three separate text
 files, separated by newlines. Each text file contains same number of lines
-(same number of points in SM, SI, and SN), to indicate the one – to – one
-correspondence.   </span></p>
+(same number of points in SM, SI, and SN), to indicate the one â€“ to â€“ one
+correspondence.Â Â  </span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>The
-next step is to apply the Delaunay Triangulation to the set SI.  </span></p>
+next step is to apply the Delaunay Triangulation to the set SI.Â  </span></p>
 
 <p class=MsoNormal><b><span lang=EN-IN style='font-size:14.0pt;line-height:
 107%'>Applying Delaunay Triangulation: </span></b></p>
@@ -284,10 +284,10 @@ Triangulation is one such operation. The triangles chosen by this algorithm are
 such that no point of the set SI lies inside the circumcircle of any triangle.
 The advantage of such a property is that it will reject very thin triangles
 with one very large obtuse angle and two very small angles. Such thin triangles
-when morphed will not be very perceptible.  </span></p>
+when morphed will not be very perceptible.Â  </span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>The
-triangulation is performed for all the sets SM, SI, SN, giving a one – to – one
+triangulation is performed for all the sets SM, SI, SN, giving a one â€“ to â€“ one
 correspondence between triangles in the image M, I and N. </span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>There
@@ -296,7 +296,7 @@ given a set of points. We will be using an inbuilt function named Subdiv2D, of
 OpenCV, which does the triangulation and returns the set of co-ordinates of the
 triangles thus obtained. This function generates a new text file for each
 image, containing the indexes of the points used as vertices in the original
-text files. This is analogous to a Hash Map of the marked points.  </span></p>
+text files. This is analogous to a Hash Map of the marked points.Â  </span></p>
 
 <p class=MsoNormal align=center style='text-align:center'><span
 style='font-size:14.0pt;line-height:107%'><img width=289 height=386
@@ -330,15 +330,15 @@ converts the triangle T to V. We use the inbuilt function getAffineTransform,
 in OpenCV, to obtain the transformation matrix. Similarly, we calculate the
 transformation matrix of the corresponding triangle W in the image N to the
 triangle V. Now we apply the transformations so obtained to all the triangles
-of both the images M and N, to obtain warped images M’ and N’ . We next
-calculate the intermediate image I by using the same equation as the naïve
+of both the images M and N, to obtain warped images Mâ€™ and Nâ€™ . We next
+calculate the intermediate image I by using the same equation as the naÃ¯ve
 algorithm: </span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
 
-<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'> I
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>Â I
 (x, y) = (1 -</span><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>
-&#945;) M’ (x, y) + &#945; N’ (x, y) </span></p>
+&#945;) Mâ€™ (x, y) + &#945; Nâ€™ (x, y) </span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
 
@@ -379,12 +379,12 @@ style='font-size:14.0pt;line-height:107%'>4)<span style='font:7.0pt "Times New R
 </span></span><span lang=EN-IN><a
 href="http://www.cs.cmu.edu/~quake/triangle.html"><span style='font-size:14.0pt;
 line-height:107%'>http://www.cs.cmu.edu/~quake/triangle.html</span></a></span><span
-lang=EN-IN style='font-size:14.0pt;line-height:107%'>  </span></p>
+lang=EN-IN style='font-size:14.0pt;line-height:107%'>Â  </span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
 
 <p class=MsoNormal><b><span lang=EN-IN style='font-size:20.0pt;line-height:
-107%'>Affine transformation between two triangles  </span></b></p>
+107%'>Affine transformation between two trianglesÂ  </span></b></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>Let
 us suppose we are trying to transform a triangle P denoted by the points a, b,
@@ -396,17 +396,17 @@ c to a triangle Q denoted by the points r, s, t. </span></p>
 transition matrix is defined by the following equation: </span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>[
-x1     x2        x3 ]   [ ax        bx        cx ]              [ rx          sx        tx
+x1Â Â Â Â  x2Â Â Â Â Â Â Â  x3 ]Â Â  [ axÂ Â Â Â Â Â Â  bxÂ Â Â Â Â Â Â  cx ]Â Â Â Â Â Â Â Â Â Â Â Â Â  [ rxÂ Â Â Â Â Â Â Â Â  sxÂ Â Â Â Â Â Â  tx
 ]</span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>[
-x4     x5        x6 ]   </span><span lang=EN-IN style='font-size:14.0pt;
-line-height:107%'>[ ay        by        cy ]      =     [ ry          sy        ty
-]   </span></p>
+x4Â Â Â Â  x5Â Â Â Â Â Â Â  x6 ]Â Â  </span><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>[ ayÂ Â Â Â Â Â Â  byÂ Â Â Â Â Â Â  cy ]Â Â Â Â Â  =Â Â Â Â  [ ryÂ Â Â Â Â Â Â Â Â  syÂ Â Â Â Â Â Â  ty
+]Â Â  </span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>[
-0       0          0   ]   </span><span lang=EN-IN style='font-size:14.0pt;
-line-height:107%'>[ 1         1          1   ]             [ 1           1          1
+0Â Â Â Â Â Â  0Â Â Â Â Â Â Â Â Â  0Â Â  ]Â Â  </span><span lang=EN-IN style='font-size:14.0pt;
+line-height:107%'>[ 1Â Â Â Â Â Â Â Â  1Â Â Â Â Â Â Â Â Â  1Â Â  ]Â Â Â Â Â Â Â Â Â Â Â Â  [ 1Â Â Â Â Â Â Â Â Â Â  1Â Â Â Â Â Â Â Â Â  1
 ]</span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
@@ -420,9 +420,9 @@ is equivalent to the following: </span></p>
 14.0pt;line-height:107%'>T A = B </span></p>
 
 <p class=MsoListParagraph style='text-indent:-.25in'><span lang=EN-IN
-style='font-size:14.0pt;line-height:107%;font-family:Wingdings'>ð<span
+style='font-size:14.0pt;line-height:107%;font-family:Wingdings'>Ã°<span
 style='font:7.0pt "Times New Roman"'> </span></span><span lang=EN-IN
-style='font-size:14.0pt;line-height:107%'>T    =  B A<sup>-1</sup></span></p>
+style='font-size:14.0pt;line-height:107%'>TÂ Â Â  = Â B A<sup>-1</sup></span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
 
@@ -433,15 +433,15 @@ inside the triangle P. Let the point be X. </span></p>
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>X<sup>T</sup>
-= [ x            y          1 ] </span></p>
+= [ xÂ Â Â Â Â Â Â Â Â Â Â  yÂ Â Â Â Â Â Â Â Â  1 ] </span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
 
-<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>X’
+<p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>Xâ€™
 = T X , </span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>Where
-X’ is the location of the transformed pixel. </span></p>
+Xâ€™ is the location of the transformed pixel. </span></p>
 
 <p class=MsoNormal><span lang=EN-IN style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
 
@@ -511,8 +511,8 @@ height=491 id="Picture 15" src="index_files/image014.jpg"><img border=0
 width=367 height=491 id="Picture 13" src="index_files/image015.jpg"></span></p>
 
 <p class=MsoNormal align=center style='text-align:center'><span lang=EN-IN
-style='font-size:14.0pt;line-height:107%'>A                                                                     B
-                                                                                C</span></p>
+style='font-size:14.0pt;line-height:107%'>AÂ Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â  Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â  B
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â  Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â  C</span></p>
 
 <p class=MsoNormal align=center style='text-align:center'><span lang=EN-IN
 style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>

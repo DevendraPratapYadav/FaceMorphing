@@ -7,8 +7,11 @@ Face Morphing by Delaunay Triangulation using OpenCV and C++
 
 We manually mark sets of tie points for images, compute the Delaunay Triangulation for them, and morph the images using alpha blending.
 
+Code is present in 'code' directory. FaceMorph.cpp implements the main program. Other files contain the images and predefined tie points.
+
 ###HOW TO RUN : 
-NOTE: Cmake and GNU make are required for compilation
+NOTE: Cmake and GNU make are required for compilation along with OpenCV.
+
 1) Compile the program by entering the following command :
 ```sh
    cmake .
